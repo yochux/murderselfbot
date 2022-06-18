@@ -84,12 +84,12 @@ async def settings(ctx, setting="None"):
     global filterWords, filterImages, logMessages
 
     validTXT = """```ini
-[ Made By: murder#0001 ]
+[ Made By: chux#0001 ]
 
 Command parsed successfully!
 Successfully toggled: {} {}
     
-[ Made by: murder#0001 ]```"""
+[ Made by: chux#0001 ]```"""
 
     invalidTXT = """```ini
 [ ]
@@ -97,7 +97,7 @@ Successfully toggled: {} {}
 Invalid option parsed
 Valid options are: \"filter\", \"images\", \"messages\"
 
-[ Made by: murder#0001 ]```"""
+[ Made by: chux#0001 ]```"""
 
     if setting.lower() == "filter":
         if filterWords:
@@ -117,12 +117,12 @@ Valid options are: \"filter\", \"images\", \"messages\"
 async def snipe(ctx):
     try:
         await ctx.message.edit(content="""```ini
-[ Made By: murder#0001 ]
+[ Made By: chux#0001 ]
 [ Message sent by: {} in: {}]
 
 Message content: {}
 
-[ Made by: murder#0001 ]```""".format(snipe_message_author[ctx.channel.id], f"#{ctx.channel.name}", snipe_message_content[ctx.channel.id]), delete_after=5)
+[ Made by: chux#0001 ]```""".format(snipe_message_author[ctx.channel.id], f"#{ctx.channel.name}", snipe_message_content[ctx.channel.id]), delete_after=5)
     except KeyError:
         await ctx.send(f"There are no recently deleted messages in #{ctx.channel.name}", delete_after=10)
 
@@ -135,12 +135,12 @@ async def stream(ctx, *, message):
     await client.change_presence(activity=stream)
     print("[#] [ACTION]: Set streaming status in channel: \"{}\".".format(ctx.channel.name))
     await ctx.message.edit(content="""```ini
-[ Made By: murder#0001 ]
+[ Made By: chux#0001 ]
     
 set stream status to: {}
 check your status!
 
-[ Made by: murder#0001 ]```""".format(message), delete_after=5)
+[ Made by: chux#0001 ]```""".format(message), delete_after=5)
 
 @client.command(aliases=['create', 'geninvite'])
 async def createinvite(ctx, guildid: int):
@@ -184,7 +184,7 @@ async def purge(ctx, amount: int):
         
     print("[#] [ACTION]: Finished purge in channel: \"{}\".".format(ctx.channel.name))
     await ctx.send("""```ini
-[ Made By: murder#0001 ]
+[ Made By: chux#0001 ]
 
 Successfully deleted {} messages.
 Slept: {} times.
